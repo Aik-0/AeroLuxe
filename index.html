@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0e14">
+  <meta name="description" content="Discover premium flight options with AeroLuxe. A luxury flight-booking demo.">
+  <title>AeroLuxe | Premium Flight Search</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <nav class="navbar">
+    <a class="brand" href="#" aria-label="AeroLuxe home">
+      <span class="brand-mark">✦</span>
+      <span>AERO<span class="brand-gold">LUXE</span></span>
+    </a>
+    <div class="nav-links">
+      <a class="active" href="#search">Flights</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#offers">Special Offers</a>
+    </div>
+    <a class="account-link" href="#search">Explore flights <span aria-hidden="true">↗</span></a>
+  </nav>
+
+  <main class="container">
+    <section class="hero-section">
+      <div class="eyebrow"><span class="eyebrow-line"></span> TRAVEL, ELEVATED</div>
+      <h1>Your next journey,<br><span>beautifully beyond.</span></h1>
+      <p>Discover exceptional routes, thoughtful comfort, and a more refined way to travel.</p>
+      <div class="hero-meta">
+        <span><span class="meta-star">✦</span> Curated flight options</span>
+        <span class="meta-dot"></span>
+        <span>Designed around your journey</span>
+      </div>
+    </section>
+
+    <section class="search-card" id="search" aria-labelledby="search-title">
+      <div class="search-card-heading">
+        <div>
+          <p class="section-kicker">PLAN YOUR JOURNEY</p>
+          <h2 id="search-title">Find your flight</h2>
+        </div>
+        <span class="demo-pill"><span class="status-dot"></span> Demo experience</span>
+      </div>
+
+      <div class="trip-types" role="radiogroup" aria-label="Trip type">
+        <label class="trip-option"><input type="radio" name="trip" value="round" checked><span class="custom-radio"></span> Round trip</label>
+        <label class="trip-option"><input type="radio" name="trip" value="one-way"><span class="custom-radio"></span> One way</label>
+      </div>
+
+      <form id="search-form" class="search-form">
+        <div class="field-group route-field">
+          <label for="from-city">From</label>
+          <div class="select-wrap"><span class="field-icon" aria-hidden="true">↗</span>
+            <select id="from-city" required>
+              <option value="Riyadh (RUH)">Riyadh (RUH)</option>
+              <option value="Jeddah (JED)">Jeddah (JED)</option>
+              <option value="Dubai (DXB)">Dubai (DXB)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="button" id="swap-cities" class="swap-button" aria-label="Swap departure and destination" title="Swap cities">⇄</button>
+
+        <div class="field-group route-field">
+          <label for="to-city">To</label>
+          <div class="select-wrap"><span class="field-icon" aria-hidden="true">⌖</span>
+            <select id="to-city" required>
+              <option value="London (LHR)">London (LHR)</option>
+              <option value="Paris (CDG)">Paris (CDG)</option>
+              <option value="Tokyo (HND)">Tokyo (HND)</option>
+              <option value="New York (JFK)">New York (JFK)</option>
+              <option value="Riyadh (RUH)">Riyadh (RUH)</option>
+              <option value="Jeddah (JED)">Jeddah (JED)</option>
+              <option value="Dubai (DXB)">Dubai (DXB)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="depart-date">Departure</label>
+          <div class="select-wrap"><span class="field-icon" aria-hidden="true">▦</span>
+            <input type="date" id="depart-date" required>
+          </div>
+        </div>
+
+        <div class="field-group" id="return-field">
+          <label for="return-date">Return</label>
+          <div class="select-wrap"><span class="field-icon" aria-hidden="true">▦</span>
+            <input type="date" id="return-date" required>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="passengers">Travelers</label>
+          <div class="select-wrap"><span class="field-icon" aria-hidden="true">♙</span>
+            <select id="passengers">
+              <option value="1">1 traveler</option>
+              <option value="2">2 travelers</option>
+              <option value="3">3 travelers</option>
+              <option value="4">4 travelers</option>
+              <option value="5">5 travelers</option>
+              <option value="6">6 travelers</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="flight-class">Cabin class</label>
+          <div class="select-wrap"><span class="field-icon" aria-hidden="true">✧</span>
+            <select id="flight-class">
+              <option value="economy">Economy</option>
+              <option value="business">Business</option>
+              <option value="first">First class</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="gold-btn search-btn"><span>Search flights</span><span aria-hidden="true">→</span></button>
+      </form>
+      <p class="form-note"><span aria-hidden="true">ⓘ</span> Sample flights and prices are for demonstration only.</p>
+    </section>
+
+    <section class="results-section" aria-labelledby="results-title">
+      <div class="results-header">
+        <div>
+          <p class="section-kicker">YOUR OPTIONS</p>
+          <h2 id="results-title">Featured flights</h2>
+          <p class="results-subtitle" id="results-summary">Explore a selection of sample routes.</p>
+        </div>
+        <div class="filter-box">
+          <label for="airline-filter">Airline</label>
+          <select id="airline-filter">
+            <option value="all">All airlines</option>
+            <option value="Saudi Arabian Airlines">Saudi Arabian Airlines</option>
+            <option value="Qatar Airways">Qatar Airways</option>
+          </select>
+        </div>
+      </div>
+      <div id="flights-list" class="flights-list" aria-live="polite"></div>
+    </section>
+
+    <section class="destination-strip" id="destinations">
+      <div><p class="section-kicker">A WORLD OF POSSIBILITIES</p><h2>Where will you go next?</h2></div>
+      <div class="destination-tags"><span>London</span><span>Paris</span><span>Tokyo</span><span>New York</span></div>
+    </section>
+
+    <section class="offer-banner" id="offers">
+      <div class="offer-symbol">✧</div>
+      <div><p class="section-kicker">THE AEROLUXE DIFFERENCE</p><h2>Make every mile feel special.</h2><p>Thoughtful details. A smoother search. A journey that feels like yours.</p></div>
+      <a href="#search" class="text-link">Plan a journey <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#"><span class="brand-mark">✦</span><span>AERO<span class="brand-gold">LUXE</span></span></a>
+    <p>© <span id="year"></span> AeroLuxe. Concept website for demonstration.</p>
+    <span class="footer-note">Not an actual airline or booking service.</span>
+  </footer>
+
+  <div id="booking-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close-btn" id="close-modal" type="button" aria-label="Close dialog">×</button>
+      <div class="modal-icon">✦</div>
+      <p class="section-kicker">YOUR JOURNEY STARTS HERE</p>
+      <h2 id="modal-title">Review your flight</h2>
+      <p class="modal-intro">Check the sample itinerary before continuing.</p>
+      <div id="modal-flight-details" class="modal-details"></div>
+      <div class="modal-total"><span>Estimated total</span><strong id="modal-price">$0</strong></div>
+      <p class="modal-disclaimer">This is a demo only. No ticket will be issued and no payment will be taken.</p>
+      <button class="gold-btn full-width" id="confirm-booking" type="button">Confirm demo selection <span aria-hidden="true">→</span></button>
+      <p id="booking-message" class="booking-message" role="status"></p>
+    </section>
+  </div>
+</body>
+</html>
